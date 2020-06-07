@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  p{
+   /* text-align: center;  */
+  }
+  .main{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+    border: 3px solid black;
+    width: 1440px;
+    height: 960px;
+  }
+  .tabbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border: 2px solid yellow;
+  }
+</style>
+<body>
+  <div class="main">
+    <p>这是自创tab</p>
+    <div class="tabbox" id="tab">
+      <nav class="firstnav">
+        <ul>
+          <li></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>

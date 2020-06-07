@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水平垂直居中</title>
+  <style>
+    .wrap {
+      width: 600px;
+      height: 600px;
+      border: 2px solid purple;
+    }
+
+    .item {
+      /* width: 150px;
+      height: 150px; */
+      background: greenyellow;
+      margin: 3px;
+    }
+
+    .father {
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: center;
+      align-items: center;
+    }
+    .item {
+      /* order: 2; order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。 */
+      /* flex-grow: 0.2; */ 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap father">
+    <div class="item child">dasdsad</div>
+  </div>
+</body>
+
+</html>

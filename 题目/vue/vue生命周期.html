@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      data:{
+        msg:1314520
+      },
+      beforeCreate() {
+        console.log('执行beforeCreate')
+      },
+      created() {
+        console.log('执行created')
+      },
+      beforeMount() {
+        console.log('执行beforeMount')
+      },
+      mounted() {
+        console.log('执行mounted')
+      },
+      beforeUpdate() {
+        console.log('执行beforeUpdate')
+      },
+      updated() {
+        console.log('执行updated')
+      },
+      beforeDestroy() {
+        console.log('执行beforeDestroy')
+      },
+      destroyed() {
+        console.log('执行destroyed')
+      },
+    })
+    setTimeout(() => {
+      vm.msg = "发生了某种改变"
+    }, 3000);
+  </script>
+</body>
+</html>

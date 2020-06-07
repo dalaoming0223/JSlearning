@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/flat-ui.min.css">
+  <title>Document</title>
+</head>
+<script src="./贪心算法2.js"></script>
+
+<body>
+  <main>
+    <div class="form-group">
+      <h1>铭仔专用</h1>
+      <div class="form-control">
+        <span>请输入n：</span><input type="text" id="numCount" value="7">
+      </div>
+      <div class="form-control">
+        <span>请输入区间大小：</span><input type="text" id="Section" value="3">
+      </div>
+      <div class="form-control">
+        <span>请输入x1->xn:</span><input type="text" id="content" value="-2,1,2,3,4,5,6">
+      </div>
+
+
+
+      <button class="btn btn-danger" type="button" onclick="calculate()">点击获取结果</button>
+      <div class="form-control">
+        <span>数量：</span>
+        <input type="text" id="result">
+      </div>
+        <span>位置：</span>
+        <textarea name="" id="result2" cols="30" rows="10"></textarea>
+      </div>
+    </div>
+
+
+  </main>
+
+</body>
+<script>
+  function calculate() {
+    let numCount = document.getElementById('numCount').value
+    let Section = parseInt(document.getElementById('Section').value)
+    let Arr = document.getElementById('content').value.split(',').map(Number)
+
+    let tmp = Arr[0] //初始化区间起点的位置为最左点
+    let count = 0 //所需区间数
+    let Location = [] //位置
+    //核心算法部分
+    if(Arr.length > 0){
+      Location.push([Arr[0],Arr[0] + Section])
+      for (let i = 0; i < numCount; i++) {
+      if (Arr[i] - tmp > Section) {
+        count++
+        tmp = Arr[i]
+        Location.push([tmp,tmp + Section])
+      } 
+    }
+    count++
+  }//核心算法部分
+    document.getElementById('result').value = count
+    for(let i of Location){
+      console.log(i)
+      document.getElementById('result2').value =' ' + document.getElementById('result2').value + i + ' || '
+    }
+    //document.getElementById('result2').value = Location  
+  }
+</script>
+<style>
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+</html>

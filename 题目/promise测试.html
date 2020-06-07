@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+  const url = 'https://46cf061f-bc18-48e2-847b-e3466f57a1a9.mock.pstmn.io/getmore'
+
+  function getJson(url) {
+    const getDetail = new Promise((resolved, rejected) => {
+      $.ajax({
+        type: "GET",
+        url: url,
+        dataType: "JSON",
+        success: function (response) {
+          //200 为正常  如果要测试失败可以自己调试
+          if (response.code == 200) {
+
+            resolved(response); // 调用resolve，代表Promise将返回成功的结果
+          } else {
+            rejected(response); // 调用reject，代表Promise会返回失败结果
+          }
+        }
+      
+      })
+    
+    })
+    return getDetail
+  }
+
+  getJson(url).then((response) => {
+    console.log(response)
+  }).catch((e) => {
+    console.log(e)
+  })
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -28,6 +28,7 @@ const url2 = 'https://img3.mukewang.com/5a9fc8070001a82402060220-100-100.jpg'
 
 loadImg(url1).then(img1 => {
     console.log(img1.width)
+    console.log('img1:',img1)
     return img1 // 普通对象
 }).then(img1 => {
     console.log(img1.height)
