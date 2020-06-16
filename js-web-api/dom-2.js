@@ -16,7 +16,7 @@ console.log( p1.parentNode )
 
 // 获取子元素列表
 const div1ChildNodes = div1.childNodes
-console.log( div1.childNodes )
+console.log( 'div1.childNodes:',div1.childNodes )
 const div1ChildNodesP = Array.prototype.slice.call(div1.childNodes).filter(child => {
     if (child.nodeType === 1) {
         return true
